@@ -27,4 +27,4 @@ if uploaded_file is not None:
 
     st.header('Visualize data')
     for col in df.columns:
-        st.bar_chart(pd.DataFrame(df[col]), x=col)
+        st.bar_chart(pd.DataFrame(df[col], columns=df[col]))
