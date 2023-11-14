@@ -26,5 +26,7 @@ if uploaded_file is not None:
     st.table(df.corr())
 
     st.header('Visualize data')
-    for i in range(len(df.columns)):
-        st.bar_chart(df[i])
+    for col in data.columns:
+        plt.hist(data[col])
+        plt.title(col)
+        plt.show()
