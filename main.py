@@ -15,8 +15,5 @@ if uploaded_file is not None:
     st.header('Show data')
     st.dataframe(df)
 
-    st.header('Modify data')
-    df = st.data_editor(df)
-
     st.header('Show correlation between variables')
     st.table(df.corr())
