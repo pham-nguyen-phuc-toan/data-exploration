@@ -16,7 +16,10 @@ if uploaded_file is not None:
     st.dataframe(df)
 
     st.header('Describe attributes')
-    st.table(df.describe())  
+    st.table(df.describe())
+
+    st.header('Show attribute information')
+    st.table(df.info())
 
     st.header('Show correlation between variables')
     st.table(df.corr())
