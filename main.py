@@ -26,4 +26,4 @@ if uploaded_file is not None:
     st.table(df.corr())
 
     st.header('Visualize data')
-    st.bar_char(df)
+    st.bar_chart(df)
