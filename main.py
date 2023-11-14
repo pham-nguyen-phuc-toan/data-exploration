@@ -3,6 +3,7 @@ from PIL import Image
 import pickle as pkl
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 st.title('Data exploration')
 
