@@ -20,11 +20,11 @@ if uploaded_file is not None:
     st.table(df.describe())
 
     st.header('Show attribute information')
-    st.text_area(label='', value=df.info())
+    st.text(df.info())
 
     st.header('Show correlation between variables')
     st.table(df.corr())
 
     st.header('Visualize data')
     for col in df.columns:
-        st.bar_chart(pd.DataFrame(df[col], columns=df[col]))
+        st.bar_chart(pd.DataFrame(df[col]), x=col)
