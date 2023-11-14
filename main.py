@@ -27,6 +27,4 @@ if uploaded_file is not None:
 
     st.header('Visualize data')
     for col in df.columns:
-        plt.hist(df[col])
-        plt.title(col)
-        plt.show()
+        st.bar_chart(df[col], x=col)
