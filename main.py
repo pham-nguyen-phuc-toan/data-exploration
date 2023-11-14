@@ -26,7 +26,7 @@ if uploaded_file is not None:
     st.table(df.corr())
 
     st.header('Visualize data')
-    for col in data.columns:
-        plt.hist(data[col])
+    for col in df.columns:
+        plt.hist(df[col])
         plt.title(col)
         plt.show()
