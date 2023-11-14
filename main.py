@@ -20,7 +20,7 @@ if uploaded_file is not None:
     st.table(df.describe())
 
     st.header('Show attribute information')
-    st.text(df.info())
+    st.text_area(label='', value=df.info())
 
     st.header('Show correlation between variables')
     st.table(df.corr())
