@@ -25,4 +25,5 @@ if uploaded_file is not None:
     st.header('Show correlation between variables')
     st.table(df.corr())
 
-    df.hist(bins=20, figsize=(20, 20))
+    st.header('Visualize data')
+    st.bar_char(df)
