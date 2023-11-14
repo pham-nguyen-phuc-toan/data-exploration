@@ -12,5 +12,8 @@ uploaded_file = st.file_uploader("Choose a .csv file", type=(['csv']))
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
 
-    st.header('Hiển thị dữ liệu')
+    st.header('Show data')
     st.dataframe(df)
+
+    st.header('Show correlation between variables')
+    st.table(df.corr())
