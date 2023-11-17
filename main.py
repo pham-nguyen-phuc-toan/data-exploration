@@ -4,6 +4,7 @@ import pickle as pkl
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 st.title('Data exploration')
 
@@ -24,6 +25,10 @@ if uploaded_file is not None:
 
     st.header('Show correlation between variables')
     st.table(df.corr())
+
+    correlation = df.corr(method='pearson')
+    fig = plt.subplots(figsize=(10,10))
+    sns.heatmap(correlation,vmax=1,square=True,annot=True,cmap='Reds')
 
     st.header('Visualize data')
     for col in df.columns:
