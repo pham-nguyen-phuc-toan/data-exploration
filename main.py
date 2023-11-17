@@ -24,8 +24,6 @@ if uploaded_file is not None:
     st.text(df.info())
 
     st.header('Show correlation between variables')
-    st.table(df.corr())
-
     fig, ax = plt.subplots()
     sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds')
     st.write(fig)
