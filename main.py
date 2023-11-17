@@ -25,7 +25,7 @@ if uploaded_file is not None:
     buffer = io.StringIO()
     df.info(buf=buffer)
     s = buffer.getvalue()
-    st.text(s)
+    st.write(s)
 
     st.header('Show correlation between variables')
     fig, ax = plt.subplots()
