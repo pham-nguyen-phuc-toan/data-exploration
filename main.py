@@ -5,6 +5,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import io
 
 st.title('Data exploration')
 
@@ -21,7 +22,10 @@ if uploaded_file is not None:
     st.table(df.describe())
 
     st.header('Show attribute information')
-    st.write(df.info())
+    buffer = io.StringIO()
+    df.info(buf=buffer)
+    s = buffer.getvalue()
+    st.text(s)
 
     st.header('Show correlation between variables')
     fig, ax = plt.subplots()
