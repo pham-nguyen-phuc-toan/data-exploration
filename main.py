@@ -31,7 +31,7 @@ if uploaded_file is not None:
     sns.heatmap(correlation,vmax=1,square=True,annot=True,cmap='Reds')
 
     fig, ax = plt.subplots()
-    sns.heatmap(df.columns, ax=ax)
+    sns.heatmap(df.corr(method='pearson'), ax=ax)
     st.write(fig)
     
     st.header('Visualize data')
