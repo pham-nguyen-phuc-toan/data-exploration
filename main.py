@@ -27,11 +27,11 @@ if uploaded_file is not None:
     s = buffer.getvalue()
     st.text(s)
 
+    st.header('Visualize data')
+    for col in df.columns:
+        st.bar_chart(pd.DataFrame(df[col]), x=col)
+
     st.header('Show correlation between variables')
     fig, ax = plt.subplots()
     sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds')
     st.write(fig)
-    
-    st.header('Visualize data')
-    for col in df.columns:
-        st.bar_chart(pd.DataFrame(df[col]), x=col)
