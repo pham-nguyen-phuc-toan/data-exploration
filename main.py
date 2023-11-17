@@ -30,6 +30,10 @@ if uploaded_file is not None:
     fig = plt.subplots(figsize=(10,10))
     sns.heatmap(correlation,vmax=1,square=True,annot=True,cmap='Reds')
 
+    fig, ax = plt.subplots()
+    sns.heatmap(df.columns, ax=ax)
+    st.write(fig)
+    
     st.header('Visualize data')
     for col in df.columns:
         st.bar_chart(pd.DataFrame(df[col]), x=col)
