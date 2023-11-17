@@ -27,7 +27,7 @@ if uploaded_file is not None:
     st.table(df.corr())
 
     fig, ax = plt.subplots()
-    sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds)
+    sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds')
     st.write(fig)
     
     st.header('Visualize data')
