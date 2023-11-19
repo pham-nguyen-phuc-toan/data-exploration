@@ -34,7 +34,7 @@ if uploaded_file is not None:
         fig, ax = plt.subplots()
         ax.hist(df[col], bins=20)
 
-st.pyplot(fig)
+        st.pyplot(fig)
 
     st.header('Show correlation between variables')
     fig, ax = plt.subplots()
