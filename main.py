@@ -29,7 +29,7 @@ if uploaded_file is not None:
 
     st.header('Visualize data')
     for col in df.columns:
-        st.bar_chart(data=pd.DataFram(df[col]), x=col)
+        st.bar_chart(data=pd.DataFrame(df[col]), x=col)
 
     st.header('Show correlation between variables')
     fig, ax = plt.subplots()
