@@ -39,3 +39,8 @@ if uploaded_file is not None:
     fig, ax = plt.subplots()
     sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds')
     st.write(fig)
+
+    depend_var = st.radio('Choose dependent variable',\
+                          df.columns)
+
+    # if genre == ':rainbow[Comedy]':
