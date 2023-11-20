@@ -43,7 +43,7 @@ if uploaded_file is not None:
     depend_var = st.radio('Choose dependent variable', df.columns)
 
     st.header('Show relationship between variables')
-    for col in list(df.columns):
+    for col in df.columns:
         if col != depend_var:
             st.write(col, depend_var)
             st.scatter_chart(pd.DataFrame(df[depend_var], df[col]))
