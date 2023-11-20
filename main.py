@@ -28,7 +28,7 @@ if uploaded_file is not None:
     st.text(s)
 
     st.header('Visualize each variable')
-    for col in df.columns:
+    for col in list(df.columns):
         fig, ax = plt.subplots()
         ax.hist(df[col], bins=20)
         plt.xlabel(col)
@@ -43,7 +43,7 @@ if uploaded_file is not None:
     depend_var = st.radio('Choose dependent variable', df.columns)
 
     st.header('Show relationship between variables')
-    for col in df.columns:
+    for col in list(df.columns):
         if col != depend_var:
             st.write(col, depend_var)
             st.scatter_chart(pd.DataFrame(df[depend_var], columns=df[col]), x=col, y=depend_var)
