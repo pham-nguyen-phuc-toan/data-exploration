@@ -37,7 +37,7 @@ if uploaded_file is not None:
 
     st.header('Show correlation between variables')
     fig, ax = plt.subplots()
-    sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds')
+    sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True, annot=True, cmap='Reds')
     st.write(fig)
 
     depend_var = st.radio('Choose dependent variable', df.columns)
@@ -47,3 +47,5 @@ if uploaded_file is not None:
         if col != depend_var:
             st.write(col, depend_var)
             st.scatter_chart(pd.DataFrame(df[depend_var], df[col]))
+            plt.xlabel(col)
+            plt.ylabel(depend_var)
