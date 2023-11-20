@@ -44,4 +44,5 @@ if uploaded_file is not None:
     st.dataframe(df[depend_var])
 
     for col in list(df.columns):
+        if col != depend_var
         st.scatter_chart(pd.DataFrame(df[col], df[depend_var]))
