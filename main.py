@@ -41,6 +41,7 @@ if uploaded_file is not None:
     st.write(fig)
 
     depend_var = st.radio('Choose dependent variable', df.columns)
+    st.dataframe(df[depend_var])
 
     for col in list(df.columns):
         st.scatter_chart(pd.DataFrame(df[col], df[depend_var]))
