@@ -21,7 +21,7 @@ if uploaded_file is not None:
     st.header('Describe attributes')
     st.table(df.describe())
 
-    st.header('Show variables' information')
+    st.header('Show variables\' information')
     buffer = io.StringIO()
     df.info(buf=buffer)
     s = buffer.getvalue()
