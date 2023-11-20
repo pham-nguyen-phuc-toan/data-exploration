@@ -40,7 +40,7 @@ if uploaded_file is not None:
     sns.heatmap(df.corr(method='pearson'), ax=ax, vmax=1,square=True,annot=True,cmap='Reds')
     st.write(fig)
 
-    depend_var = st.radio('Choose dependent variable',\
-                          df.columns)
+    depend_var = st.radio('Choose dependent variable', df.columns)
 
-    # if genre == ':rainbow[Comedy]':
+    for col in df.columns.remove(depend_var):
+        st.scatter_chart(pd.DataFrame(df[col], df[depend_var]))
