@@ -41,7 +41,6 @@ if uploaded_file is not None:
     st.write(fig)
 
     depend_var = st.radio('Choose dependent variable', df.columns)
-    st.dataframe(df[depend_var])
 
     for col in list(df.columns):
         if col != depend_var:
