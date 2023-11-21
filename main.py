@@ -47,5 +47,5 @@ if uploaded_file is not None:
         if col != depend_var:
             fig, ax = plt.subplots()
             st.write(col, depend_var)
-            ax.scatter(pd.DataFrame([df[depend_var], df[col]]))
+            ax.scatter(x=df[col], y=[df[depend_var])
             st.pyplot(fig)
