@@ -45,6 +45,8 @@ if uploaded_file is not None:
     st.header('Show relationship between variables')
     for col in list(df.columns):
         if col != depend_var:
+            fig, ax = plt.subplots()
             st.write(col, depend_var)
             st.write(df[col])
             st.scatter_chart(pd.DataFrame([df[depend_var], df[col]]))
+            st.pyplot(fig)
